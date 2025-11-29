@@ -1,0 +1,51 @@
+Documentação do Código - Jogo da Cobra em Pygame
+1. Visão Geral
+Este documento descreve o funcionamento do código fornecido, que implementa um jogo estilo 'Snake' utilizando a biblioteca Pygame.
+
+2. Estrutura do Código
+O código é composto por funções e um loop principal que controla o fluxo do jogo. Ele inclui movimentação da cobra, detecção de colisões, geração de obstáculos e gerenciamento da maçã que aumenta o comprimento da cobra.
+
+3. Bibliotecas Utilizadas
+- pygame: Biblioteca principal para gráficos e controle do jogo.
+- sys: Usada para encerrar o jogo adequadamente.
+- random: Usada para gerar posições aleatórias para a maçã.
+
+4. Variáveis Principais
+• LARGURA e ALTURA: Dimensões da janela do jogo.
+• x_cobra e y_cobra: Posição inicial da cobra.
+• velocidade: Controla a velocidade de movimento.
+• x_controle e y_controle: Direção do movimento da cobra.
+• lista_cobra: Lista contendo os segmentos da cobra.
+• comprimento_inicial: Define o tamanho inicial da cobra.
+
+5. Funções do Código
+5.1 Morreu()
+Exibe uma tela de 'MORREU' quando a cobra colide com uma parede, obstáculo ou consigo mesma. A função aguarda uma tecla pressionada para reiniciar.
+5.2 aumenta_cobra(lista_cobra)
+Renderiza cada segmento da cobra na tela, desenhando pequenos retângulos.
+5.3 pedral()
+Desenha obstáculos fixos no mapa em forma de círculos e verifica colisões da cobra com esses obstáculos. Em caso de colisão, chama a função Morreu().
+
+6. Loop Principal do Jogo
+Responsável por:
+- Capturar eventos do teclado.
+- Controlar a direção da cobra.
+- Atualizar sua posição.
+- Renderizar maçãs, obstáculos e a cobra.
+- Detectar colisões com maçãs, paredes e o próprio corpo.
+- Atualizar a velocidade e o tamanho da cobra.
+
+7. Mecânicas do Jogo
+• A cobra se movimenta continuamente na direção definida pelo jogador.
+• Ao comer a maçã, ela cresce e sua velocidade aumenta.
+• Se colidir com obstáculos, paredes, ou consigo mesma, o jogo reinicia.
+• Obstáculos são fixos e não mudam de posição durante o jogo.
+
+8. Estrutura dos Obstáculos
+Os obstáculos são objetos do tipo Rect com círculos desenhados por cima. A colisão é verificada comparando-se o retângulo da cobra com o retângulo dos obstáculos.
+
+9. Possíveis Melhorias
+- Sistema de pontos.
+- Tela inicial e menu.
+- Dificuldade progressiva.
+- Obstáculos aleatórios.
